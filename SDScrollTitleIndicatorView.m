@@ -106,6 +106,9 @@
     //让当前点击的label显示在可视范围的中间
     //最大允许滚动的距离
     CGFloat maxOffsetX = self.backScrollView.contentSize.width - self.backScrollView.bounds.size.width;
+    if (maxOffsetX <= 0) { //如果内容宽度小于scrollview的宽度,就不变化
+        return;
+    }
     //最小就是0
     CGFloat minOffsetX = 0;
     //可以滚动的范围
